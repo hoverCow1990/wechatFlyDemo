@@ -10,11 +10,12 @@ module.exports = {
         'cost_ms': 36500
       })
     }
+    console.log(data.score, this.parseKey(rank, 'wxgame').score)
 
     if (rank && data.score <= this.parseKey(rank, 'wxgame').score) {
       isNeedUpdata = false
     }
-
+    console.log(isNeedUpdata)
     return {
       postData,
       isNeedUpdata,
@@ -35,7 +36,7 @@ module.exports = {
       for (let j = 0; j < list.length - i - 1; j++) {
         list[j] = this.handlerWxgame(list[j])
         list[j + 1] = this.handlerWxgame(list[j + 1])
-        if (list[j].score < list[j + 1].score) {
+        if (Number(list[j].score) < Number(list[j + 1].score)) {
           [list[j + 1], list[j]] = [list[j], list[j + 1]]
         }
       }
