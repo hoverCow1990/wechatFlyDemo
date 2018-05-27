@@ -67,7 +67,6 @@ export default class Bird extends Sprite {
       let g = 0.98 / 2.4 // 重力加速度
       let offsetUp = 5 // 向上偏移
       let y = g * this.upCount * (this.upCount - offsetUp) / 2
-      console.log(this.upCount)
       this.y = this.stY + y
       this.playFrames = this.playFrames + 0.2
       this.upCount++

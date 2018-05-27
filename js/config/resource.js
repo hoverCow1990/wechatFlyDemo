@@ -6,6 +6,7 @@ export default {
     pencilUp: 'images/pie_up.png', // 上笔尖
     pencilDown: 'images/pie_down.png', // 下鼻尖
     birds: 'images/birds.png', // 鸟
-    startButton: 'images/start_button.png' // 开始按钮
+    startButton: 'images/start_button.png', // 开始按钮
+    startButton2: 'images/button2.png' // 开始按钮2
   }
 }

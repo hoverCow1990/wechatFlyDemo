@@ -16,7 +16,7 @@ export default class UpPencil extends Pencil {
     super(img, y, headTop, isFirst)
 
     this.type = 'up'
-    this.addScoreW = canvas.width / 8
+    this.addScoreW = canvas.width / 5
     this.scoreSwitch = true
   }
 

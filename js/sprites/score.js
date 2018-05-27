@@ -23,6 +23,7 @@ export default class Score {
 
   reset() {
     this.score = 0
+    this.tarScore = 0
     this.timer && clearInterval(this.timer)
   }
 
@@ -41,9 +42,9 @@ export default class Score {
 
     
 
-    this.ctx.font = "27px Verdana";
+    this.ctx.font = "25px Verdana";
     this.ctx.strokeStyle = "#222"
-    this.ctx.lineWidth = 8
+    this.ctx.lineWidth = 5
 
     this.ctx.strokeText(
       this.score, 
@@ -51,7 +52,7 @@ export default class Score {
       this.y
     )
 
-    this.ctx.font = "27px Verdana";
+    this.ctx.font = "25px Verdana";
     // 用渐变填色
     this.ctx.fillStyle = '#fff'
 
@@ -63,16 +64,21 @@ export default class Score {
   }
   
   // 增加分数
-  addScore(score = 100) {
+  addScore(score = 10) {
     this.tarScore = this.score + score
 
     this.timer = setInterval(() => {
-      this.score += 2
+      this.score++
 
       if (this.score >= this.tarScore) {
         this.score = this.tarScore 
         this.timer && clearInterval(this.timer)
       }
-    }, 12)
+    }, 20)
+  }
+
+  // 获取分数
+  getScore() {
+    return this.tarScore
   }
 }

@@ -19,11 +19,10 @@ export default function (cb) {
 
     resourceData.imgList[key] = img
 
-    // new dataBus().put('resource', resource)
 
     // 加载图片
     img.onload = function () {
-      if (++loadCount === imgList.length - 1) {
+      if (++loadCount === imgList.length) {
         console.log('----图片加载完毕----')
         new dataBus().put('resource', resourceData)
         cb()

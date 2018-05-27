@@ -30,7 +30,7 @@ export default class Sprite {
      */
   draw() {
     if (!this.visible) return
-    
+
     this.ctx.drawImage(
       this.img,
       this.srcX,
